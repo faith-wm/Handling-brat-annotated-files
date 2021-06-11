@@ -1,5 +1,3 @@
-
-
 import os
 from bs4 import BeautifulSoup as bs
 import re
@@ -17,9 +15,6 @@ class Brat_to_XML():
         ann_files = [file for file in os.listdir(folder) if file.split('.')[-1] == 'ann']
         txt_files = [file for file in os.listdir(folder) if file.split('.')[-1] == 'txt']
 
-
-        # samples = [12374678, 12540501, 15084618, 15769994, 21145085, 26200977, 26547101, 26562292
-        #             ,27029708,27589688]
 
         ann_files = sorted(ann_files)
         for file in ann_files:
@@ -119,18 +114,10 @@ class XML_to_BIO():
 
 
 #BRAT to XML
-# folder = 'Files_folder/V1_annotation'
-# xmlFolder='Files_folder/XML_files'
-# Brat_to_XML(files_folder=folder,xmlSaveFolder=xmlFolder).convert2XML()
+# ann_folder = 'ann_folder'
+# xmlFolder='xmlFolder'
+# Brat_to_XML(files_folder=ann_folder,xmlSaveFolder=xmlFolder).convert2XML()
 
-#XML to BIO
-xmlFolder='Files_folder/XML_files'
-bio_folder='Files_folder/IOB_csv_files'
-XML_to_BIO(xmlFilesFolder=xmlFolder,bio_save_folder=bio_folder).convertTOBio()
-
-
-
-
-#BRAT to BIO
-
-#CSV to XML
+#XML to IOB
+# iob_folder='iob_folder'
+# XML_to_BIO(xmlFilesFolder=xmlFolder,bio_save_folder=iob_folder).convertTOBio()
